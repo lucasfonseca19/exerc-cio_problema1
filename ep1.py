@@ -46,3 +46,46 @@ def plb():
         while(loop_point()!=True):
             loop_point()
         apostapoint()
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ def anycraps():
+    global fichas
+    global z
+    global apostaa
+    print("o número sorteado é:",z)
+    if(z==2 or z==3 or z==12):
+        fichas=fichas+7*apostaa
+        print("Agora você tem o total de: {}".format(fichas))
+    else:
+        fichas=fichas-apostaa
+        print("Agora você tem o total de: {}".format(fichas))   
+    
+    
