@@ -98,3 +98,39 @@ def sorteio():
     else:
         fichas=fichas-apostat
         print("Agora você tem o total de: {}".format(fichas))
+
+        def apostas():
+    tipos=[]
+    while True:
+        global z
+        z=sorteio()
+        tipo=input("Você se encontra na fase Come Out\n \nQuais tipos de aposta você gostaria de fazer?\n \n Digite 'plb' e/ou 'field' e/ou'anycraps' e/ou'twelve' separado por virgulas\nQuando terminar de escolher digite 'acabei' ")
+        if (tipo =='acabei'):
+            break
+        tipos.append(tipo)
+    for word in tipos:
+        global apostaa,apostaf,apostap,apostat
+        if word=='plb':
+            apostap=int(input("Quantas fichas gostaria de jogar? lembrando que você só pode jogar um número inteiro de fichas"))
+        elif word=='field':
+            apostaf=int(input("Quantas fichas gostaria de jogar? lembrando que você só pode jogar um número inteiro de fichas"))   
+        elif word=='anycraps':
+            apostaa=int(input("Quantas fichas gostaria de jogar? lembrando que você só pode jogar um número inteiro de fichas"))
+        elif word=='twelve':
+            apostat=int(input("Quantas fichas gostaria de jogar? lembrando que você só pode jogar um número inteiro de fichas"))     
+    for word in tipos:
+        if word=='plb':
+            print("PlB:\n")
+            plb()
+            
+        elif word=='field':
+            print("FIELD:\n")
+            field()
+            
+        elif word=='anycraps':
+            print("ANYCRAPS:\n")
+            anycraps()
+            
+        elif word=='twelve':
+            print("TWELVE:\n")
+            twelve()
