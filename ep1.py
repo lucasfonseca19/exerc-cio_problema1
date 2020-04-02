@@ -76,3 +76,25 @@ def sorteio():
     else:
         fichas=fichas+3*apostaf
         print("Agora você tem o total de: {}".format(fichas))
+
+
+
+
+
+
+
+
+
+
+
+        def twelve():
+    global fichas
+    global z
+    global apostat
+    print("o número sorteado é:",z)
+    if(z==12):
+        fichas=fichas+30*apostat
+        print("Agora você tem o total de: {}".format(fichas))
+    else:
+        fichas=fichas-apostat
+        print("Agora você tem o total de: {}".format(fichas))
