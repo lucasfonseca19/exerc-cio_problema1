@@ -88,4 +88,79 @@ def plb():
         fichas=fichas-apostaa
         print("Agora você tem o total de: {}".format(fichas))   
     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+print("\nBem vindo ao Craps Insper, você inicia com 100 fichas \n")
+
+if (apostar()==True):
+    while(fichas>0):
+        apostas()
+else:
+    print("até mais")
+
     
