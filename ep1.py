@@ -10,6 +10,7 @@ def apostar():
     if (resp =='apostar'):
         return True
     else:
+        return False
 def sorteio():
     x=random.choice(dado1)
     y=random.choice(dado2)
@@ -19,6 +20,7 @@ def sorteio():
 '''funções para modos de jogo'''
 def plb():
     global fichas 
+    global z
     global apostap
     print("o número sorteado é:",z)
     if(z== 7 or z== 11):
