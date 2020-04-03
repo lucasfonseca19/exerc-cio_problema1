@@ -3,7 +3,13 @@ import random
 dado1=[1,2,3,4,5,6]
 dado2=[1,2,3,4,5,6]
 fichas=100
-
+n=1
+z=0
+point=0
+apostap=0
+apostaf=0
+apostat=0
+apostaa=0
 '''função apostar ou não(não terminei)'''
 def apostar():
     resp=input("\nvocê gostaria de apostar nessa rodada ou sair do jogo?\nDigite'apostar'ou'sair'\n")
@@ -105,13 +111,13 @@ def apostas():
     for word in tipos:
         global apostaa,apostaf,apostap,apostat
         if word=='plb':
-            apostap=int(input("Quantas fichas gostaria de jogar? lembrando que você só pode jogar um número inteiro de fichas"))
+            apostap=int(input("Quantas fichas gostaria de jogar no PLB? lembrando que você só pode jogar um número inteiro de fichas"))
         elif word=='field':
-            apostaf=int(input("Quantas fichas gostaria de jogar? lembrando que você só pode jogar um número inteiro de fichas"))   
+            apostaf=int(input("Quantas fichas gostaria de jogar no FIELD? lembrando que você só pode jogar um número inteiro de fichas"))   
         elif word=='anycraps':
-            apostaa=int(input("Quantas fichas gostaria de jogar? lembrando que você só pode jogar um número inteiro de fichas"))
+            apostaa=int(input("Quantas fichas gostaria de jogar no ANYCRAPS? lembrando que você só pode jogar um número inteiro de fichas"))
         elif word=='twelve':
-            apostat=int(input("Quantas fichas gostaria de jogar? lembrando que você só pode jogar um número inteiro de fichas"))     
+            apostat=int(input("Quantas fichas gostaria de jogar no TWELVE? lembrando que você só pode jogar um número inteiro de fichas"))     
     for word in tipos:
         if word=='plb':
             print("PlB:\n")
