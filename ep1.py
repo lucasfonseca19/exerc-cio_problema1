@@ -52,7 +52,7 @@ def plb():
         while(loop_point()!=True):
             loop_point()
         apostapoint()
-    def field():
+def field():
     global fichas
     global z
     global apostaf
@@ -70,7 +70,7 @@ def plb():
     else:
         fichas=fichas+3*apostaf
         print("Agora você tem o total de: {}".format(fichas))
- def anycraps():
+def anycraps():
     global fichas
     global z
     global apostaa
@@ -81,7 +81,7 @@ def plb():
     else:
         fichas=fichas-apostaa
         print("Agora você tem o total de: {}".format(fichas))   
-        def twelve():
+def twelve():
     global fichas
     global z
     global apostat
@@ -93,7 +93,7 @@ def plb():
         fichas=fichas-apostat
         print("Agora você tem o total de: {}".format(fichas))
 
-        def apostas():
+def apostas():
     tipos=[]
     while True:
         global z
