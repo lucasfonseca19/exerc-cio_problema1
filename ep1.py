@@ -27,7 +27,6 @@ def sorteio():
     y=random.choice(dado2)
     resultado=x+y
     return resultado
-    global z
 #funções para modos de jogo
 # * Uso de 'global' em fichas para que qualquer jogo altere a quantidade de fichas do usuário
 # * Uso de 'global'em z para que um mesmo sorteio seja usado em mais de um jogo
@@ -39,34 +38,34 @@ def plb():
     print("o número sorteado é:",z)
     if(z== 7 or z== 11):
         fichas=fichas+apostap 
-        print("Agora você tem o total de: {}".format(fichas))
+        print("Agora você tem o total de: {} fichas".format(fichas))
     elif(z== 2 or z== 3 or z== 12):
         fichas=fichas-apostap
-        print("Agora você tem o total de: {}".format(fichas))
+        print("Agora você tem o total de: {} fichas".format(fichas))
     elif(z== 4 or z== 5 or z== 6 or z== 8 or z== 9 or z== 10):   
         #Função para ser usado a frente com o while e ficar no modo point até atingir um veredito
         def loop_point():
             w=sorteio()
             global n
             global fichas
-            print("Agora você se encontra na fase point referente ao modo plb pela {}° vez\n".format(n))
-            print("O valor {} retirado no priemiro sorteio é seu point".format(z))
+            print("\nAgora você se encontra na fase point referente ao modo plb pela {}° vez\n".format(n))
+            print("O valor {} retirado no primeiro sorteio é seu point".format(z))
             print("O novo valor sorteado é",w)
             n=n+1
-            print("agora você possui{}fichas",format(fichas))
+            
             if(w==z):
                 fichas=fichas+apostap
-                print(fichas)
+                print("agora você possui{}fichas",format(fichas))
                 return True
             elif(w==7):
                 fichas=fichas-apostap
-                print("você perdeu tudo!!!")
+                print("Você perdeu tudo!!!")
+                print("agora você possui{}fichas",format(fichas))
                 return True
             else:
                 return False
         while(loop_point()!=True):
             loop_point()
-        apostapoint()
 def field():
     global fichas
     global z
@@ -75,16 +74,16 @@ def field():
     if(z==5 or z==6 or z==7 or z==8):
         fichas=fichas-apostaf
         print('Você perdeu tudo !!!')
-        print("Agora você tem o total de: {}".format(fichas))
+        print("Agora você tem o total de: {} fichas".format(fichas))
     elif(z==3 or z==4 or z==9 or z==10 or z==11):
         fichas=fichas
-        print("Você contínua com o total de: {}".format(fichas))
+        print("Você contínua com o total de: {} fichas".format(fichas))
     elif(z==2):
         fichas=fichas+2*apostaf
-        print("Agora você tem o total de: {}".format(fichas))
+        print("Agora você tem o total de: {} fichas ".format(fichas))
     else:
         fichas=fichas+3*apostaf
-        print("Agora você tem o total de: {}".format(fichas))
+        print("Agora você tem o total de: {} fichas".format(fichas))
 def anycraps():
     global fichas
     global z
@@ -92,10 +91,10 @@ def anycraps():
     print("o número sorteado é:",z)
     if(z==2 or z==3 or z==12):
         fichas=fichas+7*apostaa
-        print("Agora você tem o total de: {}".format(fichas))
+        print("Agora você tem o total de: {} fichas".format(fichas))
     else:
         fichas=fichas-apostaa
-        print("Agora você tem o total de: {}".format(fichas))   
+        print("Agora você tem o total de: {} fichas".format(fichas))   
 def twelve():
     global fichas
     global z
@@ -103,10 +102,10 @@ def twelve():
     print("o número sorteado é:",z)
     if(z==12):
         fichas=fichas+30*apostat
-        print("Agora você tem o total de: {}".format(fichas))
+        print("Agora você tem o total de: {} fichas".format(fichas))
     else:
         fichas=fichas-apostat
-        print("Agora você tem o total de: {}".format(fichas))
+        print("Agora você tem o total de: {} fichas".format(fichas))
 #Função para armazenamento de tipos de apostas e os valores apostados até o usuário disser que acaabou
 def apostas():
     #lista 'tipos'criada para armazenar modos selecionados
@@ -114,6 +113,7 @@ def apostas():
     while True:
         global z
         z=sorteio()
+        
         tipo=input("Você se encontra na fase Come Out\n \nQuais tipos de aposta você gostaria de fazer?\n \n Digite 'plb' e/ou 'field' e/ou'anycraps' e/ou'twelve' separado por virgulas\nQuando terminar de escolher digite 'acabei' ")
         if (tipo =='acabei'):
             break
@@ -150,8 +150,9 @@ def apostas():
 print("\nBem vindo ao Craps Insper, você inicia com 100 fichas \n")
 #corpo principal que desencadeia cada função do jogo
 #Faz o jogo rodar até que as fichas acabem
-if (apostar()==True):
-    while(fichas>0):
+while(fichas>0):
+    if(apostar()==False):
+        print('ATÉ MAIS')
+        break
+    else:
         apostas()
-else:
-    print("até mais")
