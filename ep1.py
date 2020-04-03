@@ -55,12 +55,12 @@ def plb():
             
             if(w==z):
                 fichas=fichas+apostap
-                print("agora você possui{}fichas",format(fichas))
+                print("agora você possui{}fichas".format(fichas))
                 return True
             elif(w==7):
                 fichas=fichas-apostap
                 print("Você perdeu tudo!!!")
-                print("agora você possui{}fichas",format(fichas))
+                print("agora você possui{}fichas".format(fichas))
                 return True
             else:
                 return False
